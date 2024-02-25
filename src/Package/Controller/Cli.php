@@ -1,6 +1,6 @@
 <?php
 
-namespace Package\R3m\Io\Raxon\Controller;
+namespace Package\R3m\Io\Email\Controller;
 
 use R3m\Io\App;
 use R3m\Io\Config;
