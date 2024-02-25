@@ -1,0 +1,15 @@
+{
+    "System": {
+        "Config": {
+            "Email": [
+                {
+                    "#class": "System.Config.Email",
+                    "queue": {
+                        "amount_per_minute": 40,
+                        "wait_inactive": 20
+                    }
+                }
+            ]
+        }
+    }
+}

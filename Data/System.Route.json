@@ -1,0 +1,19 @@
+{
+  "System": {
+    "Route": [
+      {
+        "#class": "System.Route",
+        "name": "r3m-io-cli-email",
+        "path": "r3m_io\/email",
+        "controller": "Package.R3m.Io.Email.Controller.Cli.run",
+        "request": {
+          "language": "en"
+        },
+        "method": [
+          "CLI"
+        ],
+        "priority": 2001
+      }
+    ]
+  }
+}

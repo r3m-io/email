@@ -1,0 +1,272 @@
+{
+    "System": {
+        "Config": {
+            "Email": {
+                "count": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "create": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "create_many": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "list": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "page": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "patch": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "patch_many": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "put": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "put_many": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "read": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "record": {
+                    "expose": [
+                        {
+                            "role": "ROLE_SYSTEM",
+                            "property": [
+                                "uuid",
+                                "#class",
+                                "queue",
+                                "controller"
+                            ],
+                            "objects": {
+                                "object": {
+                                    "queue": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "amount_per_minute",
+                                            "wait_inactive"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

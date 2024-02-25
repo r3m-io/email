@@ -1,0 +1,102 @@
+{
+    "EmailQueue": {
+        "create" : {
+            "validate": {
+                "subject" : [
+                    {
+                        "string.length": ">1"
+                    }
+                ],
+                "text" : [
+                    {
+                        "string.length": ">1"
+                    }
+                ],
+                "body" : [
+                    {
+                        "string.length": ">1"
+                    }
+                ],
+                "to" : [
+                    {
+                        "in.array.email": true
+                    }
+                ],
+                "?replyTo" : [
+                    {
+                        "in.array.email": true
+                    }
+                ],
+                "?cc" : [
+                    {
+                        "in.array.email": true
+                    }
+                ],
+                "?bcc" : [
+                    {
+                        "in.array.email": true
+                    }
+                ],
+                "?priority" : [
+                    {
+                        "integer": ">=1"
+                    }
+                ]
+            }
+        },
+        "update" : {
+            "validate": {
+                "?id" : [
+                    {
+                        "integer": ">=1"
+                    }
+                ],
+                "?uuid" : [
+                    {
+                        "is.uuid": true
+                    }
+                ],
+                "?subject" : [
+                    {
+                        "string.length": ">1"
+                    }
+                ],
+                "?text" : [
+                    {
+                        "string.length": ">1"
+                    }
+                ],
+                "?body" : [
+                    {
+                        "string.length": ">1"
+                    }
+                ],
+                "?to" : [
+                    {
+                        "in.array.email": true
+                    }
+                ],
+                "?replyTo" : [
+                    {
+                        "in.array.email": true
+                    }
+                ],
+                "?cc" : [
+                    {
+                        "in.array.email": true
+                    }
+                ],
+                "?bcc" : [
+                    {
+                        "in.array.email": true
+                    }
+                ],
+                "?priority" : [
+                    {
+                        "integer": ">=1"
+                    }
+                ]
+            }
+        }
+    }
+}
