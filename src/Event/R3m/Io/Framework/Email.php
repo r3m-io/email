@@ -43,7 +43,6 @@ class Email {
             $object_mail->config('email.controller'),
         );
         $read = $object->data_read($object_mail->config('project.dir.data') . 'App' . $object_mail->config('ds') . 'Email' . $object_mail->config('extension.json'));
-        ddd($read);
         $is_email = false;
         $email = false;
         if ($read) {
@@ -260,7 +259,6 @@ class Email {
                 }
             }
         }
-        \Event\R3m\Io\Framework\d($to);
         if (
             !empty($to) &&
             is_array($to) &&
