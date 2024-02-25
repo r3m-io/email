@@ -237,7 +237,6 @@ trait Main {
                             //get config
                             $config = $object->config('email.account');
 
-                            d($object->config());
                             ddd($config);
 
                             if($config){
