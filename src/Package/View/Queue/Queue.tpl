@@ -1,2 +1,2 @@
 {{R3M}}
-{{Package.R3m.Io.Email:Main:queue()}}
+{{Package.R3m.Io.Email:Main:queue(options())}}
