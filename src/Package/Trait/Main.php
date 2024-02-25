@@ -233,12 +233,7 @@ trait Main {
                             } else {
                                 $sleep = 2;
                             }
-//                            $config =  Email::get($object);
-                            //get config
                             $config = $object->config('email.account');
-
-                            ddd($config);
-
                             if($config){
                                 $config = new Data(Core::object($config, Core::OBJECT_OBJECT));
                                 $toArray = Entity::getToArray(
