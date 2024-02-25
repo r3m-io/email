@@ -51,9 +51,17 @@ trait Import {
 
             $class = 'System.Config';
             $response = $node->record($class, $node->role_system());
+            if(
+                $response &&
+                array_key_exists('node', $response) &&
+                property_exists($response['node'], 'uuid')
+            ){
+                $record = (object) [];
+                $record->uuid = $response['node']->uuid;
+                $record->email = '*';
+                $response = $node->patch($class, $node->role_system(), $record);
+            }
             ddd($response);
-
-
         }
     }
 }
