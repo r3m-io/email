@@ -34,8 +34,9 @@ class Email {
      */
     public static function queue(App $object, $action='', $options=[]): void
     {
-        ddd(\Host\Api\Workandtravel\World\Controller\System::class);
         $object_mail = App::instance();
+        ddd($object_mail->config('email'));
+
         Controller::configure(
             $object_mail,
             \Host\Api\Workandtravel\World\Controller\System::class,
