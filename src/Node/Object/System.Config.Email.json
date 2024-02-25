@@ -27,6 +27,43 @@
                 "type": "string"
             },
             {
+                "name": "account",
+                "type": "object",
+                "property": [
+                    {
+                        "name": "username",
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "type": "string"
+                    },
+                    {
+                        "name": "host",
+                        "type": "string"
+                    },
+                    {
+                        "name": "port",
+                        "type": "int"
+                    },
+                    {
+                        "name": "from",
+                        "type": "object",
+                        "property": [
+                            {
+                                "name": "name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "email",
+                                "type": "string"
+                            }
+                        ]
+                    }
+                ],
+                "multiple": false
+            },
+            {
                 "name": "#class",
                 "type": "string"
             }

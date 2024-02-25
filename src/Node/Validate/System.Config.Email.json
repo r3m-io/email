@@ -23,6 +23,36 @@
                                     ]
                                 }
                             }
+                        ],
+                        "?account.username": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.password": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.hostname": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.port": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.from.name": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.from.email": [
+                            {
+                                "string.length": ">=1"
+                            }
                         ]
                     }
                 },
@@ -47,6 +77,36 @@
                                     ]
                                 }
                             }
+                        ],
+                        "?account.username": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.password": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.hostname": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.port": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.from.name": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.from.email": [
+                            {
+                                "string.length": ">=1"
+                            }
                         ]
                     }
                 },
@@ -70,6 +130,36 @@
                                         "#class"
                                     ]
                                 }
+                            }
+                        ],
+                        "?account.username": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.password": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.hostname": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.port": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.from.name": [
+                            {
+                                "string.length": ">=1"
+                            }
+                        ],
+                        "?account.from.email": [
+                            {
+                                "string.length": ">=1"
                             }
                         ]
                     }

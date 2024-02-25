@@ -10,7 +10,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -20,6 +21,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -34,7 +56,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -44,6 +67,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -58,7 +102,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -68,6 +113,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -82,7 +148,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -92,6 +159,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -106,7 +194,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -116,6 +205,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -130,7 +240,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -140,6 +251,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -154,7 +286,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -164,6 +297,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -178,7 +332,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -188,6 +343,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -202,7 +378,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -212,6 +389,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -226,7 +424,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -236,6 +435,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -250,7 +470,8 @@
                                 "uuid",
                                 "#class",
                                 "queue",
-                                "controller"
+                                "controller",
+                                "account"
                             ],
                             "objects": {
                                 "object": {
@@ -260,6 +481,27 @@
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
+                                    },
+                                    "account": {
+                                        "multiple": false,
+                                        "expose": [
+                                            "username",
+                                            "password",
+                                            "host",
+                                            "port",
+                                            "from"
+                                        ],
+                                        "objects": {
+                                            "object": {
+                                                "from": {
+                                                    "multiple": false,
+                                                    "expose": [
+                                                        "name",
+                                                        "email"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
