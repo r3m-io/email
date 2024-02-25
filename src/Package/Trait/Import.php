@@ -60,7 +60,7 @@ trait Import {
                 $record->uuid = $response['node']->uuid;
                 $record->email = '*';
                 $response = $node->patch($class, $node->role_system(), $record);
-                $node->stats($class, $response);
+                echo 'Patched ' . $class . '...' . PHP_EOL;
             }
         }
     }
