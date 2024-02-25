@@ -235,7 +235,10 @@ trait Main {
                             }
 //                            $config =  Email::get($object);
                             //get config
-                            ddd('get config');
+                            $config = $object->config('email.account');
+
+
+                            ddd($config);
 
                             if($config){
                                 $config = new Data(Core::object($config, Core::OBJECT_OBJECT));
