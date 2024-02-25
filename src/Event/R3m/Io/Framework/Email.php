@@ -305,7 +305,8 @@ class Email {
                     }
                 }
                 if (!empty($attachments)) {
-                    $node->setAttachment(Core::object($attachments, Core::OBJECT_ARRAY));
+                    $attachment = array_values($attachments);
+                    $node->setAttachment($attachments);
                 }
             }
             if ($priority) {
