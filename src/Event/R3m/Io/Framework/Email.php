@@ -35,13 +35,15 @@ class Email {
     public static function queue(App $object, $action='', $options=[]): void
     {
         $object_mail = App::instance();
-        ddd($object_mail->config('email'));
-
+        if(empty($object_mail->config('email.controller'))){
+            return;
+        }
         Controller::configure(
             $object_mail,
-            \Host\Api\Workandtravel\World\Controller\System::class,
+            $object_mail->config('email.controller'),
         );
         $read = $object->data_read($object_mail->config('project.dir.data') . 'App' . $object_mail->config('ds') . 'Email' . $object_mail->config('extension.json'));
+        ddd($read);
         $is_email = false;
         $email = false;
         if ($read) {
