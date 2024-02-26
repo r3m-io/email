@@ -73,7 +73,7 @@ trait Main {
                 ':' .
                 $config->get('port')
             ;
-            d($dsn);
+            ddd($dsn);
             $transport = Transport::fromDsn($dsn);
             $mailer = new Mailer($transport);
             $email = (new MimeEmail())->from(new Address($config->get('from.email'), $config->get('from.name')));
