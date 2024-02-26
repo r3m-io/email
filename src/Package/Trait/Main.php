@@ -62,7 +62,9 @@ trait Main {
      */
     public static function send(App $object, Data $config, $record=[]): bool
     {
+
         try {
+            $record = Core::object($record, Core::OBJECT_ARRAY);
             $dsn =
                 'smtp://' .
                 urlencode($config->get('username')) .
@@ -161,6 +163,7 @@ trait Main {
 
     /**
      * @throws Exception
+     * @throws TransportExceptionInterface
      */
     public function queue($options): void
     {
@@ -258,7 +261,7 @@ trait Main {
                                     $function,
                                     $role
                                 );
-                                $this->send($object, $config, $record);
+                                $this->send($object, $config, $record->data());
                                 $node->setIsSend(new DateTime());
                                 $entityManager->persist($node);
                                 $entityManager->flush();
