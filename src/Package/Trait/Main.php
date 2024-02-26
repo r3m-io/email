@@ -65,11 +65,11 @@ trait Main {
         try {
             $dsn =
                 'smtp://' .
-                $config->get('username') .
+                urlencode($config->get('username')) .
                 ':' .
-                $config->get('password') .
+                urlencode($config->get('password')) .
                 '@' .
-                $config->get('hostname') .
+                urlencode($config->get('hostname')) .
                 ':' .
                 $config->get('port');
             ddd($dsn);
