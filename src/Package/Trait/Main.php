@@ -245,17 +245,17 @@ trait Main {
                                     $entity,
                                     $entity . '.queue.expose'
                                 );
-                                ddd($expose);
+                                d($expose);
                                 $record = [];
-                                $record = Entity::toArray(
+                                $record = Entity::expose(
                                     $object,
                                     clone $node,
-                                    $toArray,
+                                    $expose,
                                     $entity,
                                     $function,
-                                    $record,
                                     $role
                                 );
+                                ddd($record);
                                 $this->send($object, $config, $record);
                                 $node->setIsSend(new DateTime());
                                 $entityManager->persist($node);
