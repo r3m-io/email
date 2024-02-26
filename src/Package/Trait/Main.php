@@ -69,11 +69,11 @@ trait Main {
                 ':' .
                 urlencode($config->get('password')) .
                 '@' .
-                urlencode($config->get('hostname')) .
+                urlencode($config->get('host')) .
                 ':' .
                 $config->get('port')
             ;
-            ddd($dsn);
+            d($dsn);
             $transport = Transport::fromDsn($dsn);
             $mailer = new Mailer($transport);
             $email = (new MimeEmail())->from(new Address($config->get('from.email'), $config->get('from.name')));
