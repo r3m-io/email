@@ -256,7 +256,6 @@ trait Main {
                                     $function,
                                     $role
                                 );
-                                ddd($record);
                                 $this->send($object, $config, $record);
                                 $node->setIsSend(new DateTime());
                                 $entityManager->persist($node);
