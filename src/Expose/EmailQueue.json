@@ -3,7 +3,8 @@
     "read" : {
       "expose" : [
         {
-          "attribute" : [
+          "role": "ROLE_SYSTEM",
+          "property" : [
             "id",
             "uuid",
             "to",
@@ -22,7 +23,8 @@
     "create" : {
       "expose" : [
         {
-          "attribute" : [
+          "role": "ROLE_SYSTEM",
+          "property" : [
             "id",
             "uuid",
             "to",
@@ -41,7 +43,8 @@
     "update" : {
       "expose" : [
         {
-          "attribute" : [
+          "role": "ROLE_SYSTEM",
+          "property" : [
             "id",
             "uuid",
             "to",
@@ -60,7 +63,9 @@
     "delete" : {
       "expose" : [
         {
-          "attribute" : [
+          "role": "ROLE_SYSTEM",
+          "property" : [
+            "id",
             "uuid",
             "to",
             "replyTo",
@@ -78,7 +83,8 @@
     "queue" : {
       "expose" : [
         {
-          "attribute" : [
+          "role": "ROLE_SYSTEM",
+          "property" : [
             "id",
             "uuid",
             "to",
