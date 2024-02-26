@@ -237,6 +237,9 @@ trait Main {
                             } else {
                                 $sleep = 2;
                             }
+                            if(method_exists($node ,'setObject')){
+                                $node->setObject($object);
+                            }
                             $config = $object->config('email.account');
                             if($config){
                                 $config = new Data(Core::object($config, Core::OBJECT_OBJECT));
