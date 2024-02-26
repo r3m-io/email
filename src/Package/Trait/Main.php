@@ -36,27 +36,6 @@ trait Main {
     const DURATION = 60;
 
     /**
-     * @throws Exception
-     */
-    public function compile($options=[]): void
-    {
-        $object = $this->object();
-        $posix_id = $object->config(Config::POSIX_ID);
-        if(
-            !in_array(
-                $posix_id,
-                [
-                    0,
-                    33
-                ]
-            )
-        ){
-            throw new Exception('Access denied...');
-        }
-        ddd($options);
-    }
-
-    /**
      * @throws TransportExceptionInterface
      * @throws Exception
      */
@@ -75,7 +54,6 @@ trait Main {
                 ':' .
                 $config->get('port')
             ;
-            d($dsn);
             $transport = Transport::fromDsn($dsn);
             $mailer = new Mailer($transport);
             $email = (new MimeEmail())->from(new Address($config->get('from.email'), $config->get('from.name')));
