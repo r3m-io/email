@@ -17,7 +17,7 @@ use R3m\Io\Module\Database;
 use R3m\Io\Module\Dir;
 use R3m\Io\Module\File;
 
-use R3m\Io\Doctrine\Entity;
+use R3m\Io\Doctrine\Service\Entity;
 
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\Transport;
