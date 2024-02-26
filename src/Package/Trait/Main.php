@@ -240,11 +240,12 @@ trait Main {
                             $config = $object->config('email.account');
                             if($config){
                                 $config = new Data(Core::object($config, Core::OBJECT_OBJECT));
-                                $toArray = Entity::getToArray(
+                                $expose = Entity::expose_get(
                                     $object,
                                     $entity,
-                                    $entity . '.queue.toArray'
+                                    $entity . '.queue.expose'
                                 );
+                                ddd($expose);
                                 $record = [];
                                 $record = Entity::toArray(
                                     $object,

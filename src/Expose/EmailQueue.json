@@ -1,10 +1,9 @@
 {
   "EmailQueue" : {
     "read" : {
-      "toArray" : [
+      "expose" : [
         {
-          "scope" : "private",
-          "attributes" : [
+          "attribute" : [
             "id",
             "uuid",
             "to",
@@ -21,10 +20,9 @@
       ]
     },
     "create" : {
-      "toArray" : [
+      "expose" : [
         {
-          "scope" : "private",
-          "attributes" : [
+          "attribute" : [
             "id",
             "uuid",
             "to",
@@ -41,10 +39,9 @@
       ]
     },
     "update" : {
-      "toArray" : [
+      "expose" : [
         {
-          "scope" : "private",
-          "attributes" : [
+          "attribute" : [
             "id",
             "uuid",
             "to",
@@ -61,10 +58,9 @@
       ]
     },
     "delete" : {
-      "toArray" : [
+      "expose" : [
         {
-          "scope" : "private",
-          "attributes" : [
+          "attribute" : [
             "uuid",
             "to",
             "replyTo",
@@ -80,10 +76,9 @@
       ]
     },
     "queue" : {
-      "toArray" : [
+      "expose" : [
         {
-          "scope" : "system",
-          "attributes" : [
+          "attribute" : [
             "id",
             "uuid",
             "to",
