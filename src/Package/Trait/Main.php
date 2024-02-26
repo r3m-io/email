@@ -3,6 +3,8 @@ namespace Package\R3m\Io\Email\Trait;
 
 use DateTime;
 
+use Entity\EmailQueue;
+
 //use Domain\Api_Workandtravel_World\Service\Email;
 //use Domain\Api_Workandtravel_World\Service\Entity;
 
@@ -14,6 +16,8 @@ use R3m\Io\Module\Data;
 use R3m\Io\Module\Database;
 use R3m\Io\Module\Dir;
 use R3m\Io\Module\File;
+
+use R3m\Io\Doctrine\Entity;
 
 use Symfony\Component\Mailer\Mailer;
 use Symfony\Component\Mailer\Transport;

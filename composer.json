@@ -9,6 +9,7 @@
         "ext-zlib": "*",
         "ext-iconv": "*",
         "r3m_io/framework": "dev-main",
+        "r3m_io/doctrine": "dev-main",
         "symfony/mailer": "*"
     },
     "minimum-stability": "dev",
