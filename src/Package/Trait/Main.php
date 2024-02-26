@@ -245,8 +245,6 @@ trait Main {
                                     $entity,
                                     $entity . '.queue.expose'
                                 );
-                                ddd((array) $node);
-                                $record = [];
                                 $record = Entity::expose(
                                     $object,
                                     clone $node,
