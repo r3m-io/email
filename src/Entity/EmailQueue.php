@@ -10,85 +10,54 @@ use Defuse\Crypto\Exception\WrongKeyOrModifiedCiphertextException;
 use Defuse\Crypto\Key;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Orm\Mapping\PrePersist;
-use Doctrine\Orm\Mapping\PreUpdate;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping\HasLifecycleCallbacks;
+use Doctrine\ORM\Mapping\PrePersist;
+use Doctrine\ORM\Mapping\PreUpdate;
+use Doctrine\ORM\Event\PrePersistEventArgs;
+use Doctrine\ORM\Event\PreUpdateEventArgs;
 
 use R3m\Io\App;
-use R3m\Io\Config;
+
 use R3m\Io\Module\Core;
-use R3m\Io\Module\Dir;
 use R3m\Io\Module\File;
 
 use Exception;
 
 use R3m\Io\Exception\FileWriteException;
 
-
-
-/**
- * @ORM\Entity
- * @ORM\Table(name="email_queue")
- * @ORM\HasLifecycleCallbacks
- */
+#[ORM\Entity]
+#[ORM\Table(name: "email_attachment")]
+#[ORM\HasLifecycleCallbacks]
 class EmailQueue {
-    /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
-     * @ORM\GeneratedValue
-     */
+    #[ORM\Id]
+    #[ORM\Column(type: "integer")]
+    #[ORM\GeneratedValue]
     protected $id;
-    /**
-     * @ORM\Column(type="string", unique=true)
-     */
+    #[ORM\Column(type: "string", unique: true)]
     protected $uuid;
-    /**
-     * @ORM\Column(type="json", name="`to`")
-     */
+    #[ORM\Column(type: "json", name: "`to`")]
     protected $to;
-    /**
-     * @ORM\Column(type="json", name="`reply_to`", nullable=true)
-     */
+    #[ORM\Column(type: "json", name: "`reply_to`", nullable: true)]
     protected $replyTo;
-    /**
-     * @ORM\Column(type="json", nullable=true)
-     */
+    #[ORM\Column(type: "json", nullable: true)]
     protected $cc;
-    /**
-     * @ORM\Column(type="json", nullable=true)
-     */
+    #[ORM\Column(type: "json", nullable: true)]
     protected $bcc;
-    /**
-     * @ORM\Column(type="text")
-     */
+    #[ORM\Column(type: "text")]
     protected $subject;
-    /**
-     * @ORM\Column(type="text")
-     */
+    #[ORM\Column(type: "text")]
     protected $text;
-    /**
-     * @ORM\Column(type="text")
-     */
+    #[ORM\Column(type: "text")]
     protected $body;
-    /**
-     * @ORM\Column(type="json", nullable=true)
-     */
+    #[ORM\Column(type: "json", nullable: true)]
     protected $attachment;
-    /**
-     * @ORM\Column(type="smallint", options={"default" : 1})
-     */
+    #[ORM\Column(type: "smallint", options: ["default" => 1])]
     protected $priority;
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
+    #[ORM\Column(type: "datetime", nullable: true)]
     protected $isSend;
-    /**
-     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
-     */
+    #[ORM\Column(type: "datetime", options: ["default" => "CURRENT_TIMESTAMP"])]
     protected $isCreated;
-    /**
-     * @ORM\Column(type="datetime", options={"default": "CURRENT_TIMESTAMP"})
-     */
+    #[ORM\Column(type: "datetime", options: ["default" => "CURRENT_TIMESTAMP"])]
     protected $isUpdated;
 
     protected $is_text_decrypted = false;
@@ -113,7 +82,7 @@ class EmailQueue {
         return $this->uuid;
     }
 
-    public function setUuid($uuid)
+    public function setUuid($uuid): void
     {
         $this->uuid = $uuid;
     }
@@ -123,7 +92,7 @@ class EmailQueue {
         return $this->to;
     }
 
-    public function setTo($to=[])
+    public function setTo($to=[]): void
     {
         $this->to = $to;
     }
@@ -133,7 +102,7 @@ class EmailQueue {
         return $this->replyTo;
     }
 
-    public function setReplyTo($replyTo=[])
+    public function setReplyTo($replyTo=[]): void
     {
         $this->replyTo = $replyTo;
     }
@@ -143,7 +112,7 @@ class EmailQueue {
         return $this->cc;
     }
 
-    public function setCc($cc=[])
+    public function setCc($cc=[]): void
     {
         $this->cc = $cc;
     }
@@ -153,7 +122,7 @@ class EmailQueue {
         return $this->bcc;
     }
 
-    public function setBcc($bcc=[])
+    public function setBcc($bcc=[]): void
     {
         $this->bcc = $bcc;
     }
@@ -166,12 +135,13 @@ class EmailQueue {
         return $this->priority;
     }
 
-    public function setPriority($priority=1)
+    public function setPriority($priority=1): void
     {
         $this->priority = $priority;
     }
 
-    public function setObject(App $object=null){
+    public function setObject(App $object=null): void
+    {
         $this->object = $object;
     }
 
@@ -206,7 +176,7 @@ class EmailQueue {
         return $this->subject;
     }
 
-    public function setSubject($subject='')
+    public function setSubject($subject=''): void
     {
         $object = $this->getObject();
         if(is_object($object)){
@@ -254,7 +224,7 @@ class EmailQueue {
         return $this->text;
     }
 
-    public function setText($text='')
+    public function setText($text=''): void
     {
         $object = $this->getObject();
         if(is_object($object)){
@@ -302,7 +272,7 @@ class EmailQueue {
         return $this->body;
     }
 
-    public function setBody($body='')
+    public function setBody($body=''): void
     {
         $object = $this->getObject();
         if(is_object($object)){
@@ -354,7 +324,7 @@ class EmailQueue {
         return $this->attachment;
     }
 
-    public function setAttachment($attachment=[])
+    public function setAttachment($attachment=[]): void
     {
         $object = $this->getObject();
         if(is_object($object)){
@@ -384,7 +354,7 @@ class EmailQueue {
         return $this->isSend;
     }
 
-    public function setIsSend(DateTime $isSend=null)
+    public function setIsSend(DateTime $isSend=null): void
     {
         $this->isSend = $isSend;
     }
@@ -394,7 +364,7 @@ class EmailQueue {
         return $this->isCreated;
     }
 
-    public function setIsCreated(DateTime $isCreated)
+    public function setIsCreated(DateTime $isCreated): void
     {
         $this->isCreated = $isCreated;
     }
@@ -404,15 +374,13 @@ class EmailQueue {
         return $this->isUpdated;
     }
 
-    public function setIsUpdated(DateTime $isUpdated)
+    public function setIsUpdated(DateTime $isUpdated): void
     {
         $this->isUpdated = $isUpdated;
     }
 
-    /**
-     * @ORM\PrePersist
-     */
-    public function prePersist()
+    #[PrePersist]
+    public function prePersist(PrePersistEventArgs $args): void
     {
         $this->setUuid(Core::uuid());
         $dateTime = new DateTime();
@@ -420,10 +388,8 @@ class EmailQueue {
         $this->setIsUpdated($dateTime);
     }
 
-    /**
-     * @ORM\PreUpdate
-     */
-    public function preUpdate()
+    #[PreUpdate]
+    public function preUpdate(PreUpdateEventArgs $args): void
     {
         $object = $this->getObject();
         if($object){
