@@ -1,7 +1,7 @@
 {
   "EmailQueue" : {
     "read" : {
-      "expose" : [
+      "output" : [
         {
           "role": "ROLE_SYSTEM",
           "property" : [
@@ -21,7 +21,7 @@
       ]
     },
     "create" : {
-      "expose" : [
+      "output" : [
         {
           "role": "ROLE_SYSTEM",
           "property" : [
@@ -41,7 +41,7 @@
       ]
     },
     "update" : {
-      "expose" : [
+      "output" : [
         {
           "role": "ROLE_SYSTEM",
           "property" : [
@@ -61,7 +61,7 @@
       ]
     },
     "delete" : {
-      "expose" : [
+      "output" : [
         {
           "role": "ROLE_SYSTEM",
           "property" : [
@@ -81,7 +81,7 @@
       ]
     },
     "queue" : {
-      "expose" : [
+      "output" : [
         {
           "role": "ROLE_SYSTEM",
           "property" : [
