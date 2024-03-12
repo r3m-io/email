@@ -3,7 +3,7 @@
         "Config": {
             "Email": {
                 "count": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -17,14 +17,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -35,7 +35,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
@@ -49,7 +49,7 @@
                     ]
                 },
                 "create": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -63,14 +63,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -81,7 +81,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
@@ -95,7 +95,7 @@
                     ]
                 },
                 "create_many": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -109,14 +109,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -127,7 +127,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
@@ -141,7 +141,7 @@
                     ]
                 },
                 "list": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -155,14 +155,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -173,7 +173,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
@@ -187,7 +187,7 @@
                     ]
                 },
                 "page": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -201,14 +201,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -219,7 +219,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
@@ -233,7 +233,7 @@
                     ]
                 },
                 "patch": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -247,14 +247,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -265,7 +265,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
@@ -279,7 +279,7 @@
                     ]
                 },
                 "patch_many": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -293,14 +293,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -311,7 +311,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
@@ -325,7 +325,7 @@
                     ]
                 },
                 "put": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -339,14 +339,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -357,7 +357,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
@@ -371,7 +371,7 @@
                     ]
                 },
                 "put_many": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -385,14 +385,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -403,7 +403,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
@@ -417,7 +417,7 @@
                     ]
                 },
                 "read": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -431,14 +431,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -449,7 +449,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
@@ -463,7 +463,7 @@
                     ]
                 },
                 "record": {
-                    "expose": [
+                    "output": [
                         {
                             "role": "ROLE_SYSTEM",
                             "property": [
@@ -477,14 +477,14 @@
                                 "object": {
                                     "queue": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "amount_per_minute",
                                             "wait_inactive"
                                         ]
                                     },
                                     "account": {
                                         "multiple": false,
-                                        "expose": [
+                                        "output": [
                                             "username",
                                             "password",
                                             "host",
@@ -495,7 +495,7 @@
                                             "object": {
                                                 "from": {
                                                     "multiple": false,
-                                                    "expose": [
+                                                    "output": [
                                                         "name",
                                                         "email"
                                                     ]
