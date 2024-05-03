@@ -42,6 +42,8 @@ return function(App $object, $flags, $options) {
         $schema_table->addColumn('isCreated', 'datetime', ['default' => 'current_timestamp']);
         $schema_table->addColumn('isUpdated', 'datetime', ['default' => 'current_timestamp']);
 
+        $schema_table->setPrimaryKey(["id"]);
+
         $queries = $schema->toSql($platform);
 
         // Create a ResultSetMapping
