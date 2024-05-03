@@ -3,6 +3,7 @@
 use R3m\Io\App;
 
 use R3m\Io\Module\Database;
+use Doctrine\DBAL\Schema\Schema;
 
 return function(App $object, $flags, $options) {
     // Your migration code here
@@ -22,7 +23,7 @@ return function(App $object, $flags, $options) {
         //$columns = $sm->listTableColumns('user');
         ddd('exist email_queue.php');
     } else {
-        $schema = \Doctrine\DBAL\Schema\Schema();
+        $schema = Schema();
         $schema_table = $schema->createTable($table);
         $schema_table->addColumn('id', 'integer', ['unsigned' => true, 'autoincrement' => true]);
         $schema_table->addColumn('uuid', 'string', ['length' => 36]);
