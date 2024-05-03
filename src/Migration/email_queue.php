@@ -37,8 +37,8 @@ return function(App $object, $flags, $options) {
         $schema_table->addColumn('attachment', 'text', ['default' => null, 'notnull' => false]);
         $schema_table->addColumn('priority', 'smallint', ['default' => 1]);
         $schema_table->addColumn('isSend', 'datetime', ['default' => null, 'notnull' => false]);
-        $schema_table->addColumn('isCreated', 'datetime', ['current_timestamp' => true]);
-        $schema_table->addColumn('isUpdated', 'datetime', ['current_timestamp' => true]);
+        $schema_table->addColumn('isCreated', 'datetime', ['default' => 'current_timestamp']);
+        $schema_table->addColumn('isUpdated', 'datetime', ['default' => 'current_timestamp']);
 
         $queries = $schema->toSql();
         ddd($queries);
