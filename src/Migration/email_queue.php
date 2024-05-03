@@ -34,6 +34,7 @@ return function(App $object, $flags, $options) {
             $rsm = new ResultSetMapping();
             foreach($queries as $sql){
                 // Create a native query
+                echo $sql . PHP_EOL;
                 $query = $em->createNativeQuery($sql, $rsm);
                 // Execute the query
                 $query->getResult();
