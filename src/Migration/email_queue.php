@@ -35,8 +35,8 @@ return function(App $object, $flags, $options) {
         $introspect->addColumn('attachment', 'longtext');
         $introspect->addColumn('priority', 'smallint', ['default' => 1]);
         $introspect->addColumn('isSend', 'datetime', ['default' => null, 'null' => true]);
-        $introspect->addColumn('isCreated', 'datetime' ['current_timestamp' => true]);
-        $introspect->addColumn('isUpdated', 'datetime' ['current_timestamp' => true]);
+        $introspect->addColumn('isCreated', 'datetime', ['current_timestamp' => true]);
+        $introspect->addColumn('isUpdated', 'datetime', ['current_timestamp' => true]);
         ddd('not exist email_queue.php');
     }
 
