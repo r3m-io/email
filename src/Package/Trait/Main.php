@@ -296,7 +296,6 @@ trait Main {
             foreach($read as $file){
                 if($file->type === File::TYPE){
                     $migration = include($file->url);
-                    ddd($migration);
                     if(is_callable($migration)){
                         $migration($object, $flags, $options);
                     }
