@@ -42,41 +42,16 @@ return function(App $object, $flags, $options) {
         $schema_table->addColumn('isSend', Types::DATETIME_MUTABLE, ['default' => null, 'notnull' => false]);
         $schema_table->addColumn('isCreated', Types::DATETIME_MUTABLE, ['default' => 'CURRENT_TIMESTAMP']);
         $schema_table->addColumn('isUpdated', Types::DATETIME_MUTABLE, ['default' => 'CURRENT_TIMESTAMP']);
-
         $schema_table->setPrimaryKey(["id"]);
-
         $queries = $schema->toSql($platform);
-
         // Create a ResultSetMapping
         $rsm = new ResultSetMapping();
-
         foreach($queries as $sql){
             // Create a native query
             $query = $em->createNativeQuery($sql, $rsm);
-
             // Execute the query
-            $results = $query->getResult();
-            d($results);
+            $query->getResult();
         }
-        /*
-        $introspect = $sm->introspectTable($table);
-        $introspect->addColumn('id', 'integer', ['autoincrement' => true]);
-        $introspect->addColumn('uuid', 'varchar', ['length' => 36]);
-        $introspect->addColumn('to', 'longtext');
-        $introspect->addColumn('reply_to', 'longtext', ['default' => null, 'null' => true]);
-        $introspect->addColumn('cc', 'longtext', ['default' => null, 'null' => true]);
-        $introspect->addColumn('bcc', 'longtext', ['default' => null, 'null' => true]);
-        $introspect->addColumn('subject', 'longtext');
-        $introspect->addColumn('text', 'longtext');
-        $introspect->addColumn('body', 'longtext');
-        $introspect->addColumn('attachment', 'longtext');
-        $introspect->addColumn('priority', 'smallint', ['default' => 1]);
-        $introspect->addColumn('isSend', 'datetime', ['default' => null, 'null' => true]);
-        $introspect->addColumn('isCreated', 'datetime', ['current_timestamp' => true]);
-        $introspect->addColumn('isUpdated', 'datetime', ['current_timestamp' => true]);
-        */
-        ddd('not exist email_queue.php');
+        echo 'Executed: ' . count($queries) . ' queries' . PHP_EOL;
     }
-
-
 };
