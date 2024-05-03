@@ -6,6 +6,116 @@
     {
       "name": "Email:queue",
       "#class": "Account.Permission"
+    },
+    {
+      "uuid": "ec1c1e23-4b97-438e-8745-41f6f731e64e",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:commit"
+    },
+    {
+      "uuid": "74ff7211-6829-47f2-9c0c-15678f5c955f",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:import"
+    },
+    {
+      "uuid": "bd1c5adb-7c5c-41b0-a2ad-439237946e12",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:record"
+    },
+    {
+      "uuid": "07a113f9-a865-40ed-bb9c-327cd60c7322",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:record.relation"
+    },
+    {
+      "uuid": "563cd5b9-ff6b-4497-a539-69cb1954a554",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:create"
+    },
+    {
+      "uuid": "6b473a62-f711-406e-b96d-1b8cffb5b6e8",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:create.many"
+    },
+    {
+      "uuid": "775646ea-35a4-4d77-87e6-0f4bfece4aa3",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:count"
+    },
+    {
+      "uuid": "4430835a-a4fa-4e08-881f-5ccca6888ce2",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:count.relation"
+    },
+    {
+      "uuid": "89985908-809c-4953-8083-a51cb6834edf",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:delete"
+    },
+    {
+      "uuid": "f66fcea3-c091-4e9b-af74-fe180dd815db",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:delete.many"
+    },
+    {
+      "uuid": "1c2e492e-7925-4b34-874e-d2c195be924a",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:read"
+    },
+    {
+      "uuid": "31fc4c94-fa7c-412f-8dd9-4bcb5e99b3b9",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:read.relation"
+    },
+    {
+      "uuid": "5e9f57de-4a33-4c52-846e-00581ebbe301",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:put"
+    },
+    {
+      "uuid": "86c5f182-bb78-4eab-9be0-bb1d91e70191",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:put.many"
+    },
+    {
+      "uuid": "8fa3faf0-d3f6-4355-8c64-52f422b1fe35",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:patch"
+    },
+    {
+      "uuid": "88741100-3e47-4524-ae40-4dbd961897fa",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:patch.many"
+    },
+    {
+      "uuid": "4a40e121-f494-40c4-86d3-344b392796ec",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:page"
+    },
+    {
+      "uuid": "30d3accd-7143-4685-87df-377512302784",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:page.relation"
+    },
+    {
+      "uuid": "974c14df-db94-456f-b389-d7541770333e",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:property.delete"
+    },
+    {
+      "uuid": "f35bf1b0-2a34-46a6-9322-b9673d2577e5",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:list"
+    },
+    {
+      "uuid": "6d3d82e7-19bd-431b-a32d-3b19ac224b2e",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:list.relation"
+    },
+    {
+      "uuid": "c00472fd-9653-4bca-a7b6-0cfacbd109ce",
+      "#class": "Account.Permission",
+      "name": "System:Config:Email:rename"
     }
   ]
 }
