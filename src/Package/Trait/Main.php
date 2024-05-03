@@ -306,6 +306,7 @@ trait Main {
 
 
 
+
         /*
         $schemaManager = $this->getDoctrine()->getConnection()->getSchemaManager();
         if ($schemaManager->tablesExist(array('users')) == true) {
