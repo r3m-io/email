@@ -9,8 +9,9 @@ return function(App $object, $flags, $options) {
     // Your migration code here
 
     $em = Database::entityManager($object);
-
-    $sm = $em->getConnection()->createSchemaManager();
+    $connection = $em->getConnection();
+    $platform = $connection->getDatabasePlatform();
+    $sm = $connection->createSchemaManager();
 
     $table = 'email_queue';
 
@@ -40,7 +41,7 @@ return function(App $object, $flags, $options) {
         $schema_table->addColumn('isCreated', 'datetime', ['default' => 'current_timestamp']);
         $schema_table->addColumn('isUpdated', 'datetime', ['default' => 'current_timestamp']);
 
-        $queries = $schema->toSql();
+        $queries = $schema->toSql($platform);
         ddd($queries);
 
         /*
