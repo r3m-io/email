@@ -28,15 +28,15 @@ return function(App $object, $flags, $options) {
         $schema_table->addColumn('id', 'integer', ['unsigned' => true, 'autoincrement' => true]);
         $schema_table->addColumn('uuid', 'string', ['length' => 36]);
         $schema_table->addColumn('to', 'text');
-        $schema_table->addColumn('reply_to', 'text', ['default' => null, 'null' => true]);
-        $schema_table->addColumn('cc', 'text', ['default' => null, 'null' => true]);
-        $schema_table->addColumn('bcc', 'text', ['default' => null, 'null' => true]);
+        $schema_table->addColumn('reply_to', 'text', ['default' => null, 'notnull' => false]);
+        $schema_table->addColumn('cc', 'text', ['default' => null, 'notnull' => false]);
+        $schema_table->addColumn('bcc', 'text', ['default' => null, 'notnull' => false]);
         $schema_table->addColumn('subject', 'text');
         $schema_table->addColumn('text', 'text');
         $schema_table->addColumn('body', 'text');
-        $schema_table->addColumn('attachment', 'text', ['default' => null, 'null' => true]);
+        $schema_table->addColumn('attachment', 'text', ['default' => null, 'notnull' => false]);
         $schema_table->addColumn('priority', 'smallint', ['default' => 1]);
-        $schema_table->addColumn('isSend', 'datetime', ['default' => null, 'null' => true]);
+        $schema_table->addColumn('isSend', 'datetime', ['default' => null, 'notnull' => false]);
         $schema_table->addColumn('isCreated', 'datetime', ['current_timestamp' => true]);
         $schema_table->addColumn('isUpdated', 'datetime', ['current_timestamp' => true]);
 
