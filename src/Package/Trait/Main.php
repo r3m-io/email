@@ -276,4 +276,81 @@ trait Main {
         }
         sleep($sleep);
     }
+
+    public function migration($flags=null, $options=null): void
+    {
+        $object = $this->object();
+        $is_force = false;
+        if(property_exists($options, 'force')){
+            $is_force = $options->force;
+        }
+
+        $url = $object->config('project.dir.source') .
+            'Migration' .
+            $object->config('ds')
+        ;
+
+        $dir = new Dir();
+        $read = $dir->read($url, true);
+        if($read){
+            foreach($read as $file){
+                if($file->type === File::TYPE){
+                    $migration = include($url);
+                    ddd($migration);
+                    if(is_callable($migration)){
+                        $migration($object, $flags, $options);
+                    }
+                }
+            }
+        }
+
+
+
+
+        /*
+        $schemaManager = $this->getDoctrine()->getConnection()->getSchemaManager();
+        if ($schemaManager->tablesExist(array('users')) == true) {
+            // table exists! ...
+        }
+        */
+
+
+
+
+        /*
+        $object = $this->object();
+        $entityManager = Database::entityManager($object);
+        $entity = 'EmailQueue';
+        $repository = $entityManager->getRepository($object->config('doctrine.entity.prefix') . $entity);
+        $criteria = [];
+        $criteria['isSend'] = null;
+        $order = [];
+        $order['priority'] = 'DESC';
+        $order['isCreated'] = 'ASC';
+        $node = $repository->findOneBy($criteria, $order);
+        if($node){
+            $config = $object->config('email.account');
+            if($config){
+                $config = new Data(Core::object($config, Core::OBJECT_OBJECT));
+                $expose = Entity::expose_get(
+                    $object,
+                    $entity,
+                    $entity . '.queue.expose'
+                );
+                $record = Entity::expose(
+                    $object,
+                    clone $node,
+                    $expose,
+                    $entity,
+                    'queue',
+                    $role
+                );
+                $this->send($object, $config, $record->data());
+                $node->setIsSend(new DateTime());
+                $entityManager->persist($node);
+                $entityManager->flush();
+            }
+        }
+        */
+    }
 }

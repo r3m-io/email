@@ -25,7 +25,7 @@ use Exception;
 use R3m\Io\Exception\FileWriteException;
 
 #[ORM\Entity]
-#[ORM\Table(name: "email_attachment")]
+#[ORM\Table(name: "email_queue")]
 #[ORM\HasLifecycleCallbacks]
 class EmailQueue {
     #[ORM\Id]
