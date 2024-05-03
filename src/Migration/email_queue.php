@@ -9,7 +9,7 @@ return function(App $object, $flags, $options) {
 
     $em = Database::entityManager($object);
 
-    $schema = $em->getConnection()->getSchemaManager();
+    $schema = $em->getConnection()->createSchemaManager();
 
     $tables = [
         'email_queue'
