@@ -27,17 +27,9 @@ return function(App $object, $flags, $options) {
             property_exists($options, 'drop') &&
             $options->drop === true
         ){
-            $schema = new Schema();
-            $schema->dropTable($table);
-            $queries = $schema->toSql($platform);
-            // Create a ResultSetMapping
-            $rsm = new ResultSetMapping();
-            foreach($queries as $sql){
-                // Create a native query
-                echo $sql . PHP_EOL;
-                $connection->executeStatement($sql);
-            }
-            echo 'Dropped: ' . count($queries) . ' queries' . PHP_EOL;
+            $sql = 'DROP TABLE ' . $table;
+            $connection->executeStatement($sql);
+            echo 'Dropped: ' . $table . PHP_EOL;
             $is_install = true;
         }
     } else {
