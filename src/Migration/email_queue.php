@@ -29,7 +29,7 @@ return function(App $object, $flags, $options) {
         ){
             $sql = 'DROP TABLE ' . $table;
             $connection->executeStatement($sql);
-            echo 'Dropped: ' . $table . PHP_EOL;
+            echo 'Dropped: ' . $table . '.' . PHP_EOL;
             $is_install = true;
         }
     } else {
@@ -62,6 +62,8 @@ return function(App $object, $flags, $options) {
             // Execute the query
             $query->getResult();
         }
-        echo 'Executed: ' . count($queries) . ' queries' . PHP_EOL;
+        echo 'Executed: ' . count($queries) . ' queries.' . PHP_EOL;
+    } else {
+        echo 'Table: ' . $table . ' already exists.' . PHP_EOL;
     }
 };
