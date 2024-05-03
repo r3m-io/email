@@ -4,6 +4,7 @@ use R3m\Io\App;
 
 use R3m\Io\Module\Database;
 use Doctrine\DBAL\Schema\Schema;
+use Doctrine\ORM\Query\ResultSetMapping;
 
 return function(App $object, $flags, $options) {
     // Your migration code here
@@ -42,8 +43,18 @@ return function(App $object, $flags, $options) {
         $schema_table->addColumn('isUpdated', 'datetime', ['default' => 'current_timestamp']);
 
         $queries = $schema->toSql($platform);
-        ddd($queries);
 
+        // Create a ResultSetMapping
+        $rsm = new ResultSetMapping();
+
+        foreach($queries as $sql){
+            // Create a native query
+            $query = $em->createNativeQuery($sql, $rsm);
+
+            // Execute the query
+            $results = $query->getResult();
+            d($results);
+        }
         /*
         $introspect = $sm->introspectTable($table);
         $introspect->addColumn('id', 'integer', ['autoincrement' => true]);
