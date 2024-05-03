@@ -20,7 +20,7 @@ return function(App $object, $flags, $options) {
     $tables = [
         $table
     ];
-
+    $count = 0;
     $is_install = false;
     if ($sm->tablesExist($tables) == true){
         if(
@@ -31,6 +31,7 @@ return function(App $object, $flags, $options) {
             $connection->executeStatement($sql);
             echo 'Dropped: ' . $table . '.' . PHP_EOL;
             $is_install = true;
+            $count++;
         }
     } else {
         $is_install = true;
@@ -54,15 +55,11 @@ return function(App $object, $flags, $options) {
         $schema_table->addColumn('isUpdated', Types::DATETIME_MUTABLE, ['default' => 'CURRENT_TIMESTAMP']);
         $schema_table->setPrimaryKey(["id"]);
         $queries = $schema->toSql($platform);
-        // Create a ResultSetMapping
-        $rsm = new ResultSetMapping();
         foreach($queries as $sql){
-            // Create a native query
-            $query = $em->createNativeQuery($sql, $rsm);
-            // Execute the query
-            $query->getResult();
+            $connection->executeStatement($sql);
+            $count++;
         }
-        echo 'Executed: ' . count($queries) . ' queries.' . PHP_EOL;
+        echo 'Executed: ' . $count . ' queries.' . PHP_EOL;
     } else {
         echo 'Table: ' . $table . ' already exists.' . PHP_EOL;
     }
