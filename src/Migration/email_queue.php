@@ -35,9 +35,7 @@ return function(App $object, $flags, $options) {
             foreach($queries as $sql){
                 // Create a native query
                 echo $sql . PHP_EOL;
-                $query = $em->createNativeQuery($sql, $rsm);
-                // Execute the query
-                $query->getResult();
+                $connection->executeStatement($sql);
             }
             echo 'Dropped: ' . count($queries) . ' queries' . PHP_EOL;
             $is_install = true;
