@@ -15,7 +15,7 @@ return function(App $object, $flags, $options) {
         'email_queue'
     ];
 
-    if ($schemaManager->tablesExist($tables == true)){
+    if ($schemaManager->tablesExist($tables) == true){
         // table exists! ...
         ddd('exist email_queue.php');
     } else {
