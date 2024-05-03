@@ -21,11 +21,30 @@ return function(App $object, $flags, $options) {
         $table
     ];
 
+    $is_install = false;
     if ($sm->tablesExist($tables) == true){
-        // table exists! ...
-        //$columns = $sm->listTableColumns('user');
-        ddd('exist email_queue.php');
+        if(
+            property_exists($options, 'drop') &&
+            $options->drop === true
+        ){
+            $schema = new Schema();
+            $schema->dropTable($table);
+            $queries = $schema->toSql($platform);
+            // Create a ResultSetMapping
+            $rsm = new ResultSetMapping();
+            foreach($queries as $sql){
+                // Create a native query
+                $query = $em->createNativeQuery($sql, $rsm);
+                // Execute the query
+                $query->getResult();
+            }
+            echo 'Dropped: ' . count($queries) . ' queries' . PHP_EOL;
+            $is_install = true;
+        }
     } else {
+        $is_install = true;
+    }
+    if($is_install === true){
         $schema = new Schema();
         $schema_table = $schema->createTable($table);
         $schema_table->addColumn('id', Types::INTEGER, ['unsigned' => true, 'autoincrement' => true]);
