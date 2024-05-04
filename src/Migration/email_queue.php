@@ -21,7 +21,6 @@ return function(App $object, $flags, $options) {
             $object->config('extension.json')
         ;
         $read = $object->data_read($url);
-        ddd($read);
         if($read){
             $schema = new Schema();
             $schema_table = $schema->createTable($read->get('Schema.table'));
