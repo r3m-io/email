@@ -10,7 +10,7 @@ return function(App $object, $flags, $options) {
     // Your migration code here
     Database::instance($object, $em, $connection, $platform, $sm);
     $table = 'email_queue';
-    $options = Database::options($object, $connection, $sm, $options, $table, $count, $is_install);
+    Database::options($object, $connection, $sm, $options, $table, $count, $is_install);
     if($is_install === true){
         $schema = new Schema();
         $schema_table = $schema->createTable($table);
@@ -29,6 +29,7 @@ return function(App $object, $flags, $options) {
         $schema_table->addColumn('isCreated', Types::DATETIME_MUTABLE, ['default' => 'CURRENT_TIMESTAMP']);
         $schema_table->addColumn('isUpdated', Types::DATETIME_MUTABLE, ['default' => 'CURRENT_TIMESTAMP']);
         $schema_table->setPrimaryKey(["id"]);
+        $schema_table->addUniqueIndex(["uuid"]);
         $queries = $schema->toSql($platform);
         foreach($queries as $sql){
             $connection->executeStatement($sql);

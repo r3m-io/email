@@ -38,7 +38,7 @@ trait Import {
         $object = $this->object();
         $package = $object->request('package');
         if($package){
-            $options = App::options($object);
+            $options = clone App::options($object);
             $class = 'System.Config.Email';
             $options->url = $object->config('project.dir.vendor') .
                 $package . '/Data/' .
