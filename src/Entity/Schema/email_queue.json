@@ -4,30 +4,41 @@
     "columns": {
       "id": {
         "type": "integer",
-        "unsigned": true,
-        "autoincrement": true
+        "options": {
+          "unsigned": true,
+          "autoincrement": true
+        }
       },
       "uuid": {
         "type": "string",
-        "length": 36
+        "options": {
+          "length": 36
+        }
+
       },
       "to": {
         "type": "text"
       },
       "reply_to": {
         "type": "text",
-        "default": null,
-        "nullable": true
+        "options": {
+          "default": null,
+          "nullable": true
+        }
       },
       "cc": {
         "type": "text",
-        "default": null,
-        "nullable": true
+        "options": {
+            "default": null,
+            "nullable": true
+        }
       },
       "bcc": {
         "type": "text",
-        "default": null,
-        "nullable": true
+        "options": {
+            "default": null,
+            "nullable": true
+        }
       },
       "subject": {
         "type": "text"
@@ -40,26 +51,36 @@
       },
       "attachment": {
         "type": "text",
-        "default": null,
-        "nullable": true
+        "options": {
+            "default": null,
+            "nullable": true
+        }
       },
       "priority": {
         "type": "smallint",
-        "length": 1,
-        "default": 1
+        "options": {
+          "length": 1,
+          "default": 1
+        }
       },
-      "isSend": {
+      "is_send": {
         "type": "datetime",
-        "default": null,
-        "nullable": true
+        "options": {
+          "default": null,
+          "nullable": true
+        }
       },
-      "isCreated": {
+      "is_created": {
         "type": "datetime",
-        "default": "CURRENT_TIMESTAMP"
+        "options": {
+          "default": "CURRENT_TIMESTAMP"
+        }
       },
-      "isUpdated": {
+      "is_updated": {
         "type": "datetime",
-        "default": "CURRENT_TIMESTAMP"
+        "options": {
+          "default": "CURRENT_TIMESTAMP"
+        }
       }
     },
     "primary_key": [
@@ -70,7 +91,7 @@
     ],
     "index": [
       "priority",
-      "isSend"
+      "is_send"
     ]
   }
 }

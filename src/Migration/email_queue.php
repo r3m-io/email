@@ -12,6 +12,20 @@ return function(App $object, $flags, $options) {
     $table = 'email_queue';
     Database::options($object, $connection, $sm, $options, $table, $count, $is_install);
     if($is_install === true){
+        $url = $object->config('project.dir.source') . 'Entity\Schema\email_queue.json';
+        $read = $object->data_read($url);
+        if($read){
+            $schema = new Schema();
+            $schema_table = $schema->createTable($read->get('Schema.table'));
+            $columns = $read->get('Schema.columns');
+            foreach($columns as $column_name => $column){
+                $schema_table->addColumn($column_name, $column->get('type'), $column->get('options'));
+            }
+
+
+        }
+
+
         $schema = new Schema();
         $schema_table = $schema->createTable($table);
         $schema_table->addColumn('id', Types::INTEGER, ['unsigned' => true, 'autoincrement' => true]);
