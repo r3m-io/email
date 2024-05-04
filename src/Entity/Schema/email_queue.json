@@ -85,7 +85,7 @@
     "primary_key": [
       "id"
     ],
-    "index_unique": [
+    "unique": [
       "uuid"
     ],
     "index": [
