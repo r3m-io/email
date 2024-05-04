@@ -19,13 +19,24 @@ return function(App $object, $flags, $options) {
             $schema_table = $schema->createTable($read->get('Schema.table'));
             $columns = $read->get('Schema.columns');
             foreach($columns as $column_name => $column){
-                $schema_table->addColumn($column_name, $column->get('type'), $column->get('options'));
+                $schema_table->addColumn($column_name, $column->get('type'), (array) $column->get('options'));
             }
-
-
+            if($read->has('Schema.primary_key')){
+                $schema_table->setPrimaryKey($read->get('Schema.primary_key'));
+            }
+            if($read->has('Schema.unique_index')){
+                foreach($read->get('Schema.unique_index') as $index_name => $index){
+                    $schema_table->addUniqueIndex($index, $index_name);
+                }
+            }
+            if($read->has('Schema.index')){
+                foreach($read->get('Schema.index') as $index_name => $index){
+                    $schema_table->addIndex($index, $index_name);
+                }
+            }
+            $queries = $schema->toSql($platform);
+            ddd($queries);
         }
-
-
         $schema = new Schema();
         $schema_table = $schema->createTable($table);
         $schema_table->addColumn('id', Types::INTEGER, ['unsigned' => true, 'autoincrement' => true]);
