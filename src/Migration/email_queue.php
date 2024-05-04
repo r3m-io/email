@@ -6,7 +6,7 @@ use R3m\Io\Module\Database;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Types\Types;
 
-use Package\R3m\Io\Doctrine\Service\Table;
+use R3m\Io\Doctrine\Service\Table;
 
 /**
  * @throws \R3m\Io\Exception\ObjectException
