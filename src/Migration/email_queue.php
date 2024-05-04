@@ -5,37 +5,12 @@ use R3m\Io\App;
 use R3m\Io\Module\Database;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Types\Types;
-use Doctrine\ORM\Query\ResultSetMapping;
 
 return function(App $object, $flags, $options) {
     // Your migration code here
-
-    $em = Database::entityManager($object);
-    $connection = $em->getConnection();
-    $platform = $connection->getDatabasePlatform();
-    $sm = $connection->createSchemaManager();
-
+    Database::instance($object, $em, $connection, $platform, $sm);
     $table = 'email_queue';
-
-    $tables = [
-        $table
-    ];
-    $count = 0;
-    $is_install = false;
-    if ($sm->tablesExist($tables) == true){
-        if(
-            property_exists($options, 'drop') &&
-            $options->drop === true
-        ){
-            $sql = 'DROP TABLE ' . $table;
-            $connection->executeStatement($sql);
-            echo 'Dropped: ' . $table . '.' . PHP_EOL;
-            $is_install = true;
-            $count++;
-        }
-    } else {
-        $is_install = true;
-    }
+    $options = Database::options($object, $connection, $sm, $options, $table, $count, $is_install);
     if($is_install === true){
         $schema = new Schema();
         $schema_table = $schema->createTable($table);
