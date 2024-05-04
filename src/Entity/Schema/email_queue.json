@@ -9,35 +9,48 @@
           "autoincrement": true
         }
       },
+      "priority": {
+        "type": "smallint",
+        "options": {
+          "default": 1,
+          "unsigned": true
+        }
+      },
       "uuid": {
         "type": "string",
         "options": {
           "length": 36
         }
-
       },
       "to": {
-        "type": "text"
+        "type": "json"
       },
       "reply_to": {
-        "type": "text",
+        "type": "json",
         "options": {
           "default": null,
           "nullable": true
         }
       },
       "cc": {
-        "type": "text",
+        "type": "json",
         "options": {
             "default": null,
             "nullable": true
         }
       },
       "bcc": {
-        "type": "text",
+        "type": "json",
         "options": {
             "default": null,
             "nullable": true
+        }
+      },
+      "attachment": {
+        "type": "json",
+        "options": {
+          "default": null,
+          "nullable": true
         }
       },
       "subject": {
@@ -48,20 +61,6 @@
       },
       "body": {
         "type": "text"
-      },
-      "attachment": {
-        "type": "text",
-        "options": {
-            "default": null,
-            "nullable": true
-        }
-      },
-      "priority": {
-        "type": "smallint",
-        "options": {
-          "default": 1,
-          "unsigned": true
-        }
       },
       "is_send": {
         "type": "datetime",

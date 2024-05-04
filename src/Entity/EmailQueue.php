@@ -29,7 +29,7 @@ use R3m\Io\Exception\FileWriteException;
 #[ORM\HasLifecycleCallbacks]
 class EmailQueue {
     #[ORM\Id]
-    #[ORM\Column(type: "integer")]
+    #[ORM\Column(type: "bigint")]
     #[ORM\GeneratedValue]
     protected $id;
     #[ORM\Column(type: "string", unique: true)]
