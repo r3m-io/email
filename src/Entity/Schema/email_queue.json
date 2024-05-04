@@ -91,7 +91,11 @@
     ],
     "index": [
       "priority",
-      "is_send"
+      "is_send",
+      [
+        "is_created",
+        "is_updated"
+      ]
     ]
   }
 }
