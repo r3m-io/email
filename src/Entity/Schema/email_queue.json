@@ -3,7 +3,7 @@
     "table": "email_queue",
     "columns": {
       "id": {
-        "type": "integer",
+        "type": "bigint",
         "options": {
           "unsigned": true,
           "autoincrement": true
@@ -59,8 +59,8 @@
       "priority": {
         "type": "smallint",
         "options": {
-          "length": 1,
-          "default": 1
+          "default": 1,
+          "unsigned": true
         }
       },
       "is_send": {
