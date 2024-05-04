@@ -54,13 +54,13 @@
         }
       },
       "subject": {
-        "type": "longtext"
+        "type": "text"
       },
       "text": {
-        "type": "longtext"
+        "type": "text"
       },
       "body": {
-        "type": "longtext"
+        "type": "text"
       },
       "is_send": {
         "type": "datetime",

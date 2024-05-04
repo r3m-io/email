@@ -57,6 +57,7 @@ return function(App $object, $flags, $options) {
         $queries = $schema->toSql($platform);
         */
         foreach($queries as $sql){
+            echo $sql . PHP_EOL;
             $connection->executeStatement($sql);
             $count++;
         }
