@@ -26,13 +26,18 @@ return function(App $object, $flags, $options) {
             $schema_table = $schema->createTable($read->get('Schema.table'));
             $columns = $read->get('Schema.columns');
             foreach($columns as $column_name => $column){
-                $schema_table->addColumn($column_name, $column->get('type'), (array) $column->get('options'));
+                if(
+                    property_exists($column, 'type') &&
+                    property_exists($column, 'options')
+                ){
+                    $schema_table->addColumn($column_name, $column->type, (array) $column->options);
+                }
             }
             if($read->has('Schema.primary_key')){
                 $schema_table->setPrimaryKey($read->get('Schema.primary_key'));
             }
-            if($read->has('Schema.unique_index')){
-                foreach($read->get('Schema.unique_index') as $index_name => $index){
+            if($read->has('Schema.index_unique')){
+                foreach($read->get('Schema.index_unique') as $index_name => $index){
                     $schema_table->addUniqueIndex($index, $index_name);
                 }
             }
