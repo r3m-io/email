@@ -28,7 +28,7 @@ return function(App $object, $flags, $options) {
             'email_queue' .
             $object->config('extension.json')
         ;
-        $doctrine_options = [
+        $doctrine_options = (object) [
             'platform' => $platform,
             'url' => $url
         ];
