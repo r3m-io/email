@@ -33,7 +33,7 @@ return function(App $object, $flags, $options) {
             'url' => $url
         ];
         $queries = Table::create($object, null, $doctrine_options);
-        ddd($queries);
+        /*
         $schema = new Schema();
         $schema_table = $schema->createTable($table);
         $schema_table->addColumn('id', Types::INTEGER, ['unsigned' => true, 'autoincrement' => true]);
@@ -55,6 +55,7 @@ return function(App $object, $flags, $options) {
         $schema_table->addIndex(['priority'],'idx_priority' );
         $schema_table->addIndex(['isSend'], 'idx_isSend');
         $queries = $schema->toSql($platform);
+        */
         foreach($queries as $sql){
             $connection->executeStatement($sql);
             $count++;
