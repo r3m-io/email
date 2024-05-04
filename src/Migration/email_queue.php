@@ -30,7 +30,12 @@ return function(App $object, $flags, $options) {
                     property_exists($column, 'type') &&
                     property_exists($column, 'options')
                 ){
-                    $schema_table->addColumn($column_name, $column->type, (array) $column->options);
+                    $options = (array) $column->options;
+                    if(array_key_exists('nullable', $options)){
+                        $options['notnull'] = !$options['nullable'];
+                        unset($options['nullable']);
+                    }
+                    $schema_table->addColumn($column_name, $column->type, $options);
                 }
             }
             if($read->has('Schema.primary_key')){
