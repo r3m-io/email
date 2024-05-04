@@ -42,13 +42,21 @@ return function(App $object, $flags, $options) {
                 $schema_table->setPrimaryKey($read->get('Schema.primary_key'));
             }
             if($read->has('Schema.index_unique')){
-                foreach($read->get('Schema.index_unique') as $index_name => $index){
-                    $schema_table->addUniqueIndex($index, $index_name);
+                foreach($read->get('Schema.index_unique') as $index){
+                    if(is_array($index)){
+                        $schema_table->addUniqueIndex($index);
+                    } else {
+                        $schema_table->addUniqueIndex([$index]);
+                    }
                 }
             }
             if($read->has('Schema.index')){
-                foreach($read->get('Schema.index') as $index_name => $index){
-                    $schema_table->addIndex($index, $index_name);
+                foreach($read->get('Schema.index') as $index){
+                    if(is_array($index)){
+                        $schema_table->addIndex($index , 'idx_' . implode('_', $index));
+                    } else {
+                        $schema_table->addIndex([$index] , 'idx_' . $index);
+                    }
                 }
             }
             $queries = $schema->toSql($platform);
