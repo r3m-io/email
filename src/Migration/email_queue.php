@@ -10,7 +10,8 @@ use Doctrine\DBAL\Types\Types;
  * @throws \R3m\Io\Exception\ObjectException
  * @throws \Doctrine\DBAL\Exception
  */
-function run(App $object, $platform, $url){
+function table_create(App $object, $platform, $url): array
+{
     $read = $object->data_read($url);
     if($read){
         $schema = new Schema();
@@ -50,9 +51,9 @@ function run(App $object, $platform, $url){
                 }
             }
         }
-        $queries = $schema->toSql($platform);
-        ddd($queries);
+        return $schema->toSql($platform);
     }
+    return [];
 }
 
 return function(App $object, $flags, $options) {
@@ -69,7 +70,8 @@ return function(App $object, $flags, $options) {
             'email_queue' .
             $object->config('extension.json')
         ;
-        $queries = run($object, $platform, $url);
+        $queries = table_create($object, $platform, $url);
+        ddd($queries);
         $schema = new Schema();
         $schema_table = $schema->createTable($table);
         $schema_table->addColumn('id', Types::INTEGER, ['unsigned' => true, 'autoincrement' => true]);
