@@ -6,6 +6,55 @@ use R3m\Io\Module\Database;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Types\Types;
 
+/**
+ * @throws \R3m\Io\Exception\ObjectException
+ * @throws \Doctrine\DBAL\Exception
+ */
+function run(App $object, $platform, $url){
+    $read = $object->data_read($url);
+    if($read){
+        $schema = new Schema();
+        $schema_table = $schema->createTable($read->get('Schema.table'));
+        $columns = $read->get('Schema.columns');
+        foreach($columns as $column_name => $column){
+            if(
+                property_exists($column, 'type') &&
+                property_exists($column, 'options')
+            ){
+                $options = (array) $column->options;
+                if(array_key_exists('nullable', $options)){
+                    $options['notnull'] = !$options['nullable'];
+                    unset($options['nullable']);
+                }
+                $schema_table->addColumn($column_name, $column->type, $options);
+            }
+        }
+        if($read->has('Schema.primary_key')){
+            $schema_table->setPrimaryKey($read->get('Schema.primary_key'));
+        }
+        if($read->has('Schema.index_unique')){
+            foreach($read->get('Schema.index_unique') as $index){
+                if(is_array($index)){
+                    $schema_table->addUniqueIndex($index);
+                } else {
+                    $schema_table->addUniqueIndex([$index]);
+                }
+            }
+        }
+        if($read->has('Schema.index')){
+            foreach($read->get('Schema.index') as $index){
+                if(is_array($index)){
+                    $schema_table->addIndex($index , 'idx_' . implode('_', $index));
+                } else {
+                    $schema_table->addIndex([$index] , 'idx_' . $index);
+                }
+            }
+        }
+        $queries = $schema->toSql($platform);
+        ddd($queries);
+    }
+}
+
 return function(App $object, $flags, $options) {
     // Your migration code here
     Database::instance($object, $em, $connection, $platform, $sm);
@@ -20,48 +69,7 @@ return function(App $object, $flags, $options) {
             'email_queue' .
             $object->config('extension.json')
         ;
-        $read = $object->data_read($url);
-        if($read){
-            $schema = new Schema();
-            $schema_table = $schema->createTable($read->get('Schema.table'));
-            $columns = $read->get('Schema.columns');
-            foreach($columns as $column_name => $column){
-                if(
-                    property_exists($column, 'type') &&
-                    property_exists($column, 'options')
-                ){
-                    $options = (array) $column->options;
-                    if(array_key_exists('nullable', $options)){
-                        $options['notnull'] = !$options['nullable'];
-                        unset($options['nullable']);
-                    }
-                    $schema_table->addColumn($column_name, $column->type, $options);
-                }
-            }
-            if($read->has('Schema.primary_key')){
-                $schema_table->setPrimaryKey($read->get('Schema.primary_key'));
-            }
-            if($read->has('Schema.index_unique')){
-                foreach($read->get('Schema.index_unique') as $index){
-                    if(is_array($index)){
-                        $schema_table->addUniqueIndex($index);
-                    } else {
-                        $schema_table->addUniqueIndex([$index]);
-                    }
-                }
-            }
-            if($read->has('Schema.index')){
-                foreach($read->get('Schema.index') as $index){
-                    if(is_array($index)){
-                        $schema_table->addIndex($index , 'idx_' . implode('_', $index));
-                    } else {
-                        $schema_table->addIndex([$index] , 'idx_' . $index);
-                    }
-                }
-            }
-            $queries = $schema->toSql($platform);
-            ddd($queries);
-        }
+        $queries = run($object, $platform, $url);
         $schema = new Schema();
         $schema_table = $schema->createTable($table);
         $schema_table->addColumn('id', Types::INTEGER, ['unsigned' => true, 'autoincrement' => true]);
