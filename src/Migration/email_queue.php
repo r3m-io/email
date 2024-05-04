@@ -24,12 +24,14 @@ return function(App $object, $flags, $options) {
         $schema_table->addColumn('text', Types::TEXT);
         $schema_table->addColumn('body', Types::TEXT);
         $schema_table->addColumn('attachment', Types::TEXT, ['default' => null, 'notnull' => false]);
-        $schema_table->addColumn('priority', Types::SMALLINT, ['default' => 1]);
+        $schema_table->addColumn('priority', Types::SMALLINT, ['default' => 1, 'length' => 2]);
         $schema_table->addColumn('isSend', Types::DATETIME_MUTABLE, ['default' => null, 'notnull' => false]);
         $schema_table->addColumn('isCreated', Types::DATETIME_MUTABLE, ['default' => 'CURRENT_TIMESTAMP']);
         $schema_table->addColumn('isUpdated', Types::DATETIME_MUTABLE, ['default' => 'CURRENT_TIMESTAMP']);
-        $schema_table->setPrimaryKey(["id"]);
-        $schema_table->addUniqueIndex(["uuid"]);
+        $schema_table->setPrimaryKey(['id']);
+        $schema_table->addUniqueIndex(['uuid']);
+        $schema_table->addIndex(['priority'],'idx_priority' );
+        $schema_table->addIndex(['isSend'], 'idx_isSend');
         $queries = $schema->toSql($platform);
         foreach($queries as $sql){
             $connection->executeStatement($sql);

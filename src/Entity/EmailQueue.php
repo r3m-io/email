@@ -53,11 +53,11 @@ class EmailQueue {
     #[ORM\Column(type: "smallint", options: ["default" => 1])]
     protected $priority;
     #[ORM\Column(type: "datetime", nullable: true)]
-    protected $isSend;
+    protected $is_send;
     #[ORM\Column(type: "datetime", options: ["default" => "CURRENT_TIMESTAMP"])]
-    protected $isCreated;
+    protected $is_created;
     #[ORM\Column(type: "datetime", options: ["default" => "CURRENT_TIMESTAMP"])]
-    protected $isUpdated;
+    protected $is_updated;
 
     protected $is_text_decrypted = false;
     protected $is_body_decrypted = false;
@@ -350,32 +350,32 @@ class EmailQueue {
 
     public function getIsSend(): ?DateTime
     {
-        return $this->isSend;
+        return $this->is_send;
     }
 
-    public function setIsSend(DateTime $isSend=null): void
+    public function setIsSend(DateTime $is_send=null): void
     {
-        $this->isSend = $isSend;
+        $this->is_send = $is_send;
     }
 
     public function getIsCreated(): DateTime
     {
-        return $this->isCreated;
+        return $this->is_created;
     }
 
-    public function setIsCreated(DateTime $isCreated): void
+    public function setIsCreated(DateTime $is_created): void
     {
-        $this->isCreated = $isCreated;
+        $this->is_created = $is_created;
     }
 
     public function getIsUpdated(): DateTime
     {
-        return $this->isUpdated;
+        return $this->is_updated;
     }
 
-    public function setIsUpdated(DateTime $isUpdated): void
+    public function setIsUpdated(DateTime $is_updated): void
     {
-        $this->isUpdated = $isUpdated;
+        $this->is_updated = $is_updated;
     }
 
     #[PrePersist]
@@ -404,6 +404,5 @@ class EmailQueue {
         }
         $this->setIsUpdated(new DateTime());
     }
-
 }
 

@@ -1,0 +1,76 @@
+{
+  "Schema" : {
+    "table": "email_queue",
+    "columns": {
+      "id": {
+        "type": "integer",
+        "unsigned": true,
+        "autoincrement": true
+      },
+      "uuid": {
+        "type": "string",
+        "length": 36
+      },
+      "to": {
+        "type": "text"
+      },
+      "reply_to": {
+        "type": "text",
+        "default": null,
+        "nullable": true
+      },
+      "cc": {
+        "type": "text",
+        "default": null,
+        "nullable": true
+      },
+      "bcc": {
+        "type": "text",
+        "default": null,
+        "nullable": true
+      },
+      "subject": {
+        "type": "text"
+      },
+      "text": {
+        "type": "text"
+      },
+      "body": {
+        "type": "text"
+      },
+      "attachment": {
+        "type": "text",
+        "default": null,
+        "nullable": true
+      },
+      "priority": {
+        "type": "smallint",
+        "length": 1,
+        "default": 1
+      },
+      "isSend": {
+        "type": "datetime",
+        "default": null,
+        "nullable": true
+      },
+      "isCreated": {
+        "type": "datetime",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      "isUpdated": {
+        "type": "datetime",
+        "default": "CURRENT_TIMESTAMP"
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "index_unique": [
+      "uuid"
+    ],
+    "index": [
+      "priority",
+      "isSend"
+    ]
+  }
+}
