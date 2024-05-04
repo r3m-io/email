@@ -25,7 +25,7 @@ return function(App $object, $flags, $options) {
             $object->config('ds') .
             'Schema' .
             $object->config('ds') .
-            'email_queue' .
+            $table .
             $object->config('extension.json')
         ;
         $doctrine_options = (object) [
