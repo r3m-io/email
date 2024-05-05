@@ -16,6 +16,7 @@ use R3m\Io\Doctrine\Service\Table;
 
 return function(App $object, $flags, $options) {
     // Your migration code here
+    ddd($options);
     Database::instance($object, "system", $em, $connection, $platform, $sm);
     $table = 'email_queue';
     Database::options($object, $connection, $sm, $options, $table, $count, $is_install);
