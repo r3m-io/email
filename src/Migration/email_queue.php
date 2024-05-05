@@ -18,7 +18,7 @@ return function(App $object, $flags, $options) {
     // Your migration code here
     Database::instance($object, "system", $em, $connection, $platform, $sm);
 
-    ddd($object->config());
+    ddd($object->config('doctrine.environment'));
 
 
     $table = 'email_queue';
