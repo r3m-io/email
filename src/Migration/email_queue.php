@@ -19,6 +19,7 @@ return function(App $object, $flags, $options) {
     Database::instance($object, "api");
     $connection = Database::connection($object, "api");
     $sm = Database::schema_manager($object, "api");
+    $platform = Database::platform($object, "api");
 
     /*
     Database::instance($object, "system");
