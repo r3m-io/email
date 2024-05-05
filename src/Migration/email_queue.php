@@ -17,6 +17,7 @@ use R3m\Io\Doctrine\Service\Table;
 return function(App $object, $flags, $options) {
     // Your migration code here
     Database::instance($object, "system", $em, $connection, $platform, $sm);
+    d($options);
     ddd($sm->listTableNames());
 
 
