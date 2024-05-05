@@ -16,11 +16,9 @@ use R3m\Io\Doctrine\Service\Table;
 
 return function(App $object, $flags, $options) {
     // Your migration code here
-    Database::instance($object, "system", $em, $connection, $platform, $sm);
-
-    ddd($object->config('doctrine.environment'));
-
-
+    Database::instance($object, "system");
+    $connection = Database::connection($object, "system");
+    $sm = Database::schema_manager($object, "system");
     $table = 'email_queue';
     Database::options($object, $connection, $sm, $options, $table, $count, $is_install);
     if($is_install === true){
