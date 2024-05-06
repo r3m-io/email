@@ -2,6 +2,7 @@
 
 use R3m\Io\App;
 
+use R3m\Io\Module\Controller;
 use R3m\Io\Module\Database;
 //use Doctrine\DBAL\Schema\Schema;
 //use Doctrine\DBAL\Types\Types;
@@ -39,7 +40,7 @@ return function(App $object, $flags, $options) {
             $object->config('ds') .
             'Schema' .
             $object->config('ds') .
-            $table .
+            Controller::name($table) .
             $object->config('extension.json')
         ;
         Schema::entity($object, (object) [
