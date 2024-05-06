@@ -29,6 +29,7 @@ return function(App $object, $flags, $options) {
     $connection = Database::connection($object, "system");
     $platform = Database::platform($object, "system");
     $table = 'email_queue';
+//    $name = 'Email.Queue';
     Database::options($object, $options, "system", null, $table, $count, $is_install);
     if($is_install === true){
         $url = $object->config('project.dir.package') .
