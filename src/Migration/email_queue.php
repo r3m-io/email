@@ -29,14 +29,19 @@ return function(App $object, $flags, $options) {
     $table = 'email_queue';
     Database::options($object, $options, "system", null, $table, $count, $is_install);
     if($is_install === true){
-        $url = $object->config('project.dir.source') .
-            'Entity' .
+        $url = $object->config('project.dir.package') .
+            'R3m' .
+            $object->config('ds') .
+            'Io' .
+            $object->config('ds') .
+            'Email' .
             $object->config('ds') .
             'Schema' .
             $object->config('ds') .
             $table .
             $object->config('extension.json')
         ;
+        ddd($url);
         $doctrine_options = (object) [
             'platform' => $platform,
             'url' => $url

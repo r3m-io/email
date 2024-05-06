@@ -1,0 +1,97 @@
+{
+  "Schema" : {
+    "table": "email_queue",
+    "entity": "EmailQueue",
+    "columns": {
+      "id": {
+        "type": "bigint",
+        "options": {
+          "unsigned": true,
+          "autoincrement": true
+        }
+      },
+      "priority": {
+        "type": "smallint",
+        "options": {
+          "default": 1,
+          "unsigned": true
+        }
+      },
+      "uuid": {
+        "type": "string",
+        "options": {
+          "length": 36
+        }
+      },
+      "to": {
+        "type": "json"
+      },
+      "reply_to": {
+        "type": "json",
+        "options": {
+          "default": null,
+          "nullable": true
+        }
+      },
+      "cc": {
+        "type": "json",
+        "options": {
+            "default": null,
+            "nullable": true
+        }
+      },
+      "bcc": {
+        "type": "json",
+        "options": {
+            "default": null,
+            "nullable": true
+        }
+      },
+      "attachment": {
+        "type": "json",
+        "options": {
+          "default": null,
+          "nullable": true
+        }
+      },
+      "subject": {
+        "type": "text"
+      },
+      "text": {
+        "type": "text"
+      },
+      "body": {
+        "type": "text"
+      },
+      "is_send": {
+        "type": "datetime",
+        "options": {
+          "default": null,
+          "nullable": true
+        }
+      },
+      "is_created": {
+        "type": "datetime",
+        "options": {
+          "default": "CURRENT_TIMESTAMP"
+        }
+      },
+      "is_updated": {
+        "type": "datetime",
+        "options": {
+          "default": "CURRENT_TIMESTAMP"
+        }
+      }
+    },
+    "primary_key": [
+      "id"
+    ],
+    "unique": [
+      "uuid"
+    ],
+    "index": [
+      "priority",
+      "is_send"
+    ]
+  }
+}
