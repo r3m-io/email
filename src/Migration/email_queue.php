@@ -42,7 +42,7 @@ return function(App $object, $flags, $options) {
             $table .
             $object->config('extension.json')
         ;
-        Schema::entity($object, [
+        Schema::entity($object, (object) [
             'table' => $table,
             'url' => $url
         ]);
