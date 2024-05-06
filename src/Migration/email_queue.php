@@ -28,7 +28,6 @@ return function(App $object, $flags, $options) {
     $platform = Database::platform($object, "system");
     $table = 'email_queue';
     Database::options($object, $options, "system", null, $table, $count, $is_install);
-    ddd($count);
     if($is_install === true){
         $url = $object->config('project.dir.source') .
             'Entity' .
