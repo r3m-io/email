@@ -2,87 +2,101 @@
   "Schema" : {
     "table": "email_queue",
     "entity": "EmailQueue",
-    "columns": {
-      "id": {
+    "columns": [
+      {
+        "name": "id",
         "type": "bigint",
         "options": {
           "unsigned": true,
           "autoincrement": true
         }
       },
-      "priority": {
+      {
+        "name": "priority",
         "type": "smallint",
         "options": {
           "default": 1,
           "unsigned": true
         }
       },
-      "uuid": {
+      {
+        "name": "uuid",
         "type": "string",
         "options": {
           "length": 36
         }
       },
-      "to": {
+      {
+        "name": "to",
         "type": "json"
       },
-      "reply_to": {
+      {
+        "name": "reply_to",
         "type": "json",
         "options": {
           "default": null,
           "nullable": true
         }
       },
-      "cc": {
+      {
+        "name": "cc",
         "type": "json",
         "options": {
             "default": null,
             "nullable": true
         }
       },
-      "bcc": {
+      {
+        "name": "bcc",
         "type": "json",
         "options": {
             "default": null,
             "nullable": true
         }
       },
-      "attachment": {
+      {
+        "name": "attachment",
         "type": "json",
         "options": {
           "default": null,
           "nullable": true
         }
       },
-      "subject": {
+      {
+        "name": "subject",
         "type": "text"
       },
-      "text": {
+      {
+        "name": "text",
         "type": "text"
       },
-      "body": {
+      {
+        "name": "body",
         "type": "text"
       },
-      "is_send": {
+      {
+        "name": "is_send",
         "type": "datetime",
         "options": {
           "default": null,
           "nullable": true
         }
       },
-      "is_created": {
+      {
+        "name": "is_created",
         "type": "datetime",
         "options": {
           "default": "CURRENT_TIMESTAMP"
         }
       },
-      "is_updated": {
+      {
+        "name": "is_updated",
         "type": "datetime",
         "options": {
           "default": "CURRENT_TIMESTAMP"
         }
       }
-    },
+    ],
     "primary_key": [
       "id"
     ],

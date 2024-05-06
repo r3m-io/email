@@ -3,10 +3,11 @@
 use R3m\Io\App;
 
 use R3m\Io\Module\Database;
-use Doctrine\DBAL\Schema\Schema;
-use Doctrine\DBAL\Types\Types;
+//use Doctrine\DBAL\Schema\Schema;
+//use Doctrine\DBAL\Types\Types;
 
 use R3m\Io\Doctrine\Service\Table;
+use R3m\Io\Doctrine\Service\Schema;
 
 /**
  * @throws \R3m\Io\Exception\ObjectException
@@ -41,6 +42,8 @@ return function(App $object, $flags, $options) {
             $table .
             $object->config('extension.json')
         ;
+        Schema::entity($object, $table, $url);
+
         ddd($url);
         $doctrine_options = (object) [
             'platform' => $platform,
