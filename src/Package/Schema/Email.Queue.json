@@ -24,19 +24,24 @@
         "name": "uuid",
         "type": "string",
         "options": {
+          "unique": true,
           "length": 36
         }
       },
       {
         "name": "to",
-        "type": "json"
+        "type": "json",
+        "options": {
+          "encryption": true
+        }
       },
       {
         "name": "reply_to",
         "type": "json",
         "options": {
           "default": null,
-          "nullable": true
+          "nullable": true,
+          "encryption": true
         }
       },
       {
@@ -44,7 +49,8 @@
         "type": "json",
         "options": {
             "default": null,
-            "nullable": true
+            "nullable": true,
+            "encryption": true
         }
       },
       {
@@ -52,7 +58,8 @@
         "type": "json",
         "options": {
             "default": null,
-            "nullable": true
+            "nullable": true,
+            "encryption": true
         }
       },
       {
@@ -60,20 +67,30 @@
         "type": "json",
         "options": {
           "default": null,
-          "nullable": true
+          "nullable": true,
+          "encryption": true
         }
       },
       {
         "name": "subject",
-        "type": "text"
+        "type": "text",
+        "options": {
+          "encryption": true
+        }
       },
       {
         "name": "text",
-        "type": "text"
+        "type": "text",
+        "options": {
+          "encryption": true
+        }
       },
       {
         "name": "body",
-        "type": "text"
+        "type": "text",
+        "options": {
+          "encryption": true
+        }
       },
       {
         "name": "is_send",
@@ -100,9 +117,6 @@
     ],
     "primary_key": [
       "id"
-    ],
-    "unique": [
-      "uuid"
     ],
     "index": [
       "priority",
