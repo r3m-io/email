@@ -17,7 +17,8 @@
         "type": "smallint",
         "options": {
           "default": 1,
-          "unsigned": true
+          "unsigned": true,
+          "definition": "INT(1) UNSIGNED NOT NULL DEFAULT 1"
         }
       },
       {
